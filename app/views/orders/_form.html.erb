@@ -1,0 +1,83 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <%= form.label :sender_name %>
+    <%= form.text_field :sender_name, class: "form-control  w-100", placeholder: "Sender Name" %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= form.label :receiver_name %>
+    <%= form.text_field :receiver_name, class: "form-control  w-100", placeholder: "Receiver Name" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <%= form.label :sender_email %>
+    <%= form.text_field :sender_email, class: "form-control  w-100", placeholder: "Sender Email", required: true %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= form.label :receiver_email %>
+    <%= form.text_field :receiver_email, class: "form-control  w-100", placeholder: "Receiver Email", required: true %>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <%= form.label :sender_address %>
+    <%= form.text_area :sender_address, rows: "4", class: "form-control  w-100", placeholder: "Sender Address" %>
+  </div>
+  <div class="form-group col-md-6">
+    <%= form.label :receiver_address %>
+    <%= form.text_area :receiver_address, rows: "4", class: "form-control  w-100", placeholder: "Receiver Address" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <%= form.label :sender_mobile %>
+    <%= form.text_field :sender_mobile, class: "form-control  w-100", placeholder: "Sender Mobile" %>
+  </div>
+  <div class="form-group col-md-2">
+    <%= form.label :sender_pincode %>
+    <%= form.text_field :sender_pincode, class: "form-control  w-100", placeholder: "Sender Pincode" %>
+  </div>
+  <div class="form-group col-md-4">
+    <%= form.label :receiver_mobile %>
+    <%= form.text_field :receiver_mobile, class: "form-control  w-100", placeholder: "Receiver Mobile" %>
+  </div>
+  <div class="form-group col-md-2">
+    <%= form.label :receiver_pincode %>
+    <%= form.text_field :receiver_pincode, class: "form-control  w-100", placeholder: "Receiver Pincode" %>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-4">
+    <%= form.label :weight %>
+    <%= form.text_field :weight, class: "form-control  w-100", placeholder: "Weight" %>
+  </div>
+  <div class="form-group col-md-2">
+    <%= form.label :type_of_service %>
+    <%= form.select :type_of_service, options_for_select(["Regular","Speed Post"], :selected => form.object.type_of_service),{}, :class => 'form-control' %>
+  </div>
+  <div class="form-group col-md-4">
+    <%= form.label :cost_of_service %>
+    <%= form.text_field :cost_of_service, class: "form-control  w-100", placeholder: "Cost of service" %>
+  </div>
+  <div class="form-group col-md-2">
+    <%= form.label :payment_mode %>
+    <%= form.select :payment_mode, options_for_select(["COD","Prepaid"], :selected => form.object.payment_mode),{}, :class => 'form-control' %>
+  </div>
+</div>
+
+<%= form.submit "Add Order", class: "btn btn-primary" %>
+
+  <% end %>

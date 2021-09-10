@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col-6">
+      <h1>Books</h1>
+    </div> 
+    <div class="col-6 ">
+      <%= link_to 'Add Order', new_order_path , class: "btn btn-outline-primary float-right" %>
+    </div> 
+  </div>
+<div class="page">
+  <table class="">
+    <thead>
+      <tr>
+        <th>Curior number</th>
+        <th>Sender name</th>
+        <th>Sender address</th>
+        <th>Sender mobile</th>
+        <th>Sender pincode</th>
+        <th>Receiver name</th>
+        <th>Receiver address</th>
+        <th>Receiver mobile</th>
+        <th>Receiver pincode</th>
+        <th>Weight</th>
+        <th>Type of service</th>
+        <th>Cost of service</th>
+        <th>Payment mode</th>
+        <th>Assm state</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.curior_number %></td>
+          <td><%= order.sender_name %></td>
+          <td><%= order.sender_address %></td>
+          <td><%= order.sender_mobile %></td>
+          <td><%= order.sender_pincode %></td>
+          <td><%= order.receiver_name %></td>
+          <td><%= order.receiver_address %></td>
+          <td><%= order.receiver_mobile %></td>
+          <td><%= order.receiver_pincode %></td>
+          <td><%= order.weight %></td>
+          <td><%= order.type_of_service %></td>
+          <td><%= order.cost_of_service %></td>
+          <td><%= order.payment_mode %></td>
+          <td><%= order.aasm_state %></td>
+          <td><%= link_to 'Show', order %>|
+              <%= link_to 'Edit', edit_order_path(order) %>|
+              <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

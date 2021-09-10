@@ -1,0 +1,47 @@
+<div class="page">
+    <div class="row">
+        <div class="col-6">
+            <h1>Search Order</h1>
+        </div> 
+        <div class="col-6 ">
+       
+            <%= form_with url: "/search_order",class: "form-inline my-2 my-lg-0 float-right", method: :get do |form| %>
+                <%= form.text_field :currior_number, class: "form-control mr-sm-2", placeholder: "Search Order" %>
+                <%= form.submit "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+            <% end %>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-12">
+        <p id="notice"><h1><%= notice %></h1></p>
+
+        <% if @order.present? %>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Curior Number</th>
+                        <th>Sender name</th>
+                        <th>Sender address</th>
+                        <th>Sender mobile</th>
+                        <th>Sender pincode</th>
+                        <th>Assm state</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% @order.each do |order| %>
+                        <tr>
+                            <td><%= order.curior_number %></td>
+                            <td><%= order.sender_name %></td>
+                            <td><%= order.sender_address %></td>
+                            <td><%= order.sender_mobile %></td>
+                            <td><%= order.sender_pincode %></td>
+                            <td> <h4><span class="label label-primary"><%= order.aasm_state %></span></h4></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+                </table>
+            <% end %>
+        </div> 
+    </div> 
+</div>

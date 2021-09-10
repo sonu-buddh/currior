@@ -1,0 +1,18 @@
+<div class="sidebar-container">
+  <ul class="sidebar-navigation">
+    <li class="header">My Service</li>
+    <li>
+        <%= link_to root_path do %>
+          <i class="fa fa-home" aria-hidden="true"></i> Homepage
+        <% end %>
+    </li>
+    <li>
+       <%= link_to orders_path do %>
+          <i class="fa fa-book" aria-hidden="true"></i> Orders
+      <% end %>
+       <%= link_to search_order_path do %>
+          <i class="fa fa-search" aria-hidden="true"></i> Search Order
+      <% end %>
+    </li>
+  </ul>
+</div>

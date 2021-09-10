@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender name:</strong>
+  <%= @order.sender_name %>
+</p>
+
+<p>
+  <strong>Sender email:</strong>
+  <%= @order.sender_email %>
+</p>
+
+<p>
+  <strong>Sender address:</strong>
+  <%= @order.sender_address %>
+</p>
+
+<p>
+  <strong>Sender mobile:</strong>
+  <%= @order.sender_mobile %>
+</p>
+
+<p>
+  <strong>Sender pincode:</strong>
+  <%= @order.sender_pincode %>
+</p>
+
+<p>
+  <strong>Receiver name:</strong>
+  <%= @order.receiver_name %>
+</p>
+
+<p>
+  <strong>Receiver name:</strong>
+  <%= @order.receiver_email %>
+</p>
+
+<p>
+  <strong>Receiver address:</strong>
+  <%= @order.receiver_address %>
+</p>
+
+<p>
+  <strong>Receiver mobile:</strong>
+  <%= @order.receiver_mobile %>
+</p>
+
+<p>
+  <strong>Receiver pincode:</strong>
+  <%= @order.receiver_pincode %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @order.weight %>
+</p>
+
+<p>
+  <strong>Type of service:</strong>
+  <%= @order.type_of_service %>
+</p>
+
+<p>
+  <strong>Cost of service:</strong>
+  <%= @order.cost_of_service %>
+</p>
+
+<p>
+  <strong>Payment mode:</strong>
+  <%= @order.payment_mode %>
+</p>
+
+<p>
+  <strong>Assm state:</strong>
+  <%= @order.aasm_state %>
+</p>
+
+<p>
+  <strong>Curior number:</strong>
+  <%= @order.curior_number %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
