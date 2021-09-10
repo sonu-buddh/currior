@@ -8,6 +8,7 @@
     </div> 
   </div>
 <div class="page">
+<% if @orders.present? %>
   <table class="">
     <thead>
       <tr>
@@ -54,5 +55,8 @@
       <% end %>
     </tbody>
   </table>
+  <% else %>
+  <h1>No Data Found...</h1>
+  <% end %>
 
 </div>

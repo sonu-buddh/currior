@@ -29,16 +29,14 @@
                 </thead>
 
                 <tbody>
-                    <% @order.each do |order| %>
                         <tr>
-                            <td><%= order.curior_number %></td>
-                            <td><%= order.sender_name %></td>
-                            <td><%= order.sender_address %></td>
-                            <td><%= order.sender_mobile %></td>
-                            <td><%= order.sender_pincode %></td>
-                            <td> <h4><span class="label label-primary"><%= order.aasm_state %></span></h4></td>
+                            <td><%= @order.curior_number %></td>
+                            <td><%= @order.sender_name %></td>
+                            <td><%= @order.sender_address %></td>
+                            <td><%= @order.sender_mobile %></td>
+                            <td><%= @order.sender_pincode %></td>
+                            <td> <h4><span class="label label-primary"><%= @order.aasm_state %></span></h4></td>
                         </tr>
-                    <% end %>
                 </tbody>
                 </table>
             <% end %>

@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     emails = params[:order].slice(:sender_email, :receiver_email, :currior_number)
-    
+    @order.aasm_state = "generated"
     respond_to do |format|
       if @order.save
         emails = emails.merge(currior_number: @order.curior_number)

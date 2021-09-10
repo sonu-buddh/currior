@@ -4,7 +4,7 @@ class Order < ApplicationRecord
     # Search by order ID
     def self.search(curior_number)
         if curior_number
-            self.where('curior_number LIKE :curior_number', curior_number: "%#{curior_number}%")
+            self.find_by(curior_number: curior_number)
         end
     end
   
