@@ -3,22 +3,20 @@
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-        <% order.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="alert alert-danger" role="alert">
+        <%= order.errors.full_messages.join(",") %>
+      </div>
     </div>
   <% end %>
 
 <div class="form-row">
   <div class="form-group col-md-6">
     <%= form.label :sender_name %>
-    <%= form.text_field :sender_name, class: "form-control  w-100", placeholder: "Sender Name" %>
+    <%= form.text_field :sender_name, class: "form-control  w-100", placeholder: "Sender Name", required: true %>
   </div>
   <div class="form-group col-md-6">
     <%= form.label :receiver_name %>
-    <%= form.text_field :receiver_name, class: "form-control  w-100", placeholder: "Receiver Name" %>
+    <%= form.text_field :receiver_name, class: "form-control  w-100", placeholder: "Receiver Name", required: true %>
   </div>
 </div>
 <div class="form-row">
@@ -44,25 +42,25 @@
 <div class="form-row">
   <div class="form-group col-md-4">
     <%= form.label :sender_mobile %>
-    <%= form.text_field :sender_mobile, class: "form-control  w-100", placeholder: "Sender Mobile" %>
+    <%= form.text_field :sender_mobile, class: "form-control  w-100", placeholder: "Sender Mobile", required: true %>
   </div>
   <div class="form-group col-md-2">
     <%= form.label :sender_pincode %>
-    <%= form.text_field :sender_pincode, class: "form-control  w-100", placeholder: "Sender Pincode" %>
+    <%= form.text_field :sender_pincode, class: "form-control  w-100", placeholder: "Sender Pincode", required: true %>
   </div>
   <div class="form-group col-md-4">
     <%= form.label :receiver_mobile %>
-    <%= form.text_field :receiver_mobile, class: "form-control  w-100", placeholder: "Receiver Mobile" %>
+    <%= form.text_field :receiver_mobile, class: "form-control  w-100", placeholder: "Receiver Mobile", required: true %>
   </div>
   <div class="form-group col-md-2">
     <%= form.label :receiver_pincode %>
-    <%= form.text_field :receiver_pincode, class: "form-control  w-100", placeholder: "Receiver Pincode" %>
+    <%= form.text_field :receiver_pincode, class: "form-control  w-100", placeholder: "Receiver Pincode", required: true %>
   </div>
 </div>
 <div class="form-row">
   <div class="form-group col-md-4">
     <%= form.label :weight %>
-    <%= form.text_field :weight, class: "form-control  w-100", placeholder: "Weight" %>
+    <%= form.text_field :weight, class: "form-control  w-100", placeholder: "Weight", required: true %>
   </div>
   <div class="form-group col-md-2">
     <%= form.label :type_of_service %>
@@ -70,7 +68,7 @@
   </div>
   <div class="form-group col-md-4">
     <%= form.label :cost_of_service %>
-    <%= form.text_field :cost_of_service, class: "form-control  w-100", placeholder: "Cost of service" %>
+    <%= form.text_field :cost_of_service, class: "form-control  w-100", placeholder: "Cost of service", required: true %>
   </div>
   <div class="form-group col-md-2">
     <%= form.label :payment_mode %>

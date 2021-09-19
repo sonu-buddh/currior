@@ -14,7 +14,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.float :cost_of_service
       t.string :payment_mode
       t.string :assm_state
-      t.string :curior_number
+      t.string :currior_number, unique: true
 
       t.timestamps
     end

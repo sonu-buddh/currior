@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_09_10_060313) do
     t.float "cost_of_service"
     t.string "payment_mode"
     t.string "aasm_state"
-    t.string "curior_number"
+    t.string "currior_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sender_email"

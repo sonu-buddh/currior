@@ -16,7 +16,7 @@ class OrdersTest < ApplicationSystemTestCase
 
     fill_in "Assm state", with: @order.assm_state
     fill_in "Cost of service", with: @order.cost_of_service
-    fill_in "Curior number", with: @order.curior_number
+    fill_in "Curior number", with: @order.currior_number
     fill_in "Payment mode", with: @order.payment_mode
     fill_in "Receiver address", with: @order.receiver_address
     fill_in "Receiver mobile", with: @order.receiver_mobile
@@ -40,7 +40,7 @@ class OrdersTest < ApplicationSystemTestCase
 
     fill_in "Assm state", with: @order.assm_state
     fill_in "Cost of service", with: @order.cost_of_service
-    fill_in "Curior number", with: @order.curior_number
+    fill_in "Curior number", with: @order.currior_number
     fill_in "Payment mode", with: @order.payment_mode
     fill_in "Receiver address", with: @order.receiver_address
     fill_in "Receiver mobile", with: @order.receiver_mobile

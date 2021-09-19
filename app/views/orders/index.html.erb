@@ -18,9 +18,7 @@
         <th>Sender mobile</th>
         <th>Sender pincode</th>
         <th>Receiver name</th>
-        <th>Receiver address</th>
         <th>Receiver mobile</th>
-        <th>Receiver pincode</th>
         <th>Weight</th>
         <th>Type of service</th>
         <th>Cost of service</th>
@@ -33,15 +31,13 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td><%= order.curior_number %></td>
+          <td><%= order.currior_number %></td>
           <td><%= order.sender_name %></td>
           <td><%= order.sender_address %></td>
           <td><%= order.sender_mobile %></td>
           <td><%= order.sender_pincode %></td>
           <td><%= order.receiver_name %></td>
-          <td><%= order.receiver_address %></td>
           <td><%= order.receiver_mobile %></td>
-          <td><%= order.receiver_pincode %></td>
           <td><%= order.weight %></td>
           <td><%= order.type_of_service %></td>
           <td><%= order.cost_of_service %></td>

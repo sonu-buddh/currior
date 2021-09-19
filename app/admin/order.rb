@@ -1,6 +1,6 @@
 ActiveAdmin.register Order do
 	actions :index, :show
-	filter :curior_number
+	filter :currior_number
     filter :created_at
 
   batch_action :sent do |ids|
@@ -26,7 +26,7 @@ ActiveAdmin.register Order do
 
   index do
     selectable_column
-        column :curior_number
+        column :currior_number
         column :aasm_state
         column :sender_name
         column :sender_address
@@ -51,7 +51,7 @@ ActiveAdmin.register Order do
 
   show title: "Order Details" do
     attributes_table do
-        row :curior_number
+        row :currior_number
         row :sender_name
         row :sender_address
         row :sender_mobile

@@ -17,7 +17,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create order" do
     assert_difference('Order.count') do
-      post orders_url, params: { order: { assm_state: @order.assm_state, cost_of_service: @order.cost_of_service, curior_number: @order.curior_number, payment_mode: @order.payment_mode, receiver_address: @order.receiver_address, receiver_mobile: @order.receiver_mobile, receiver_name: @order.receiver_name, receiver_pincode: @order.receiver_pincode, sender_address: @order.sender_address, sender_mobile: @order.sender_mobile, sender_name: @order.sender_name, sender_pincode: @order.sender_pincode, type_of_service: @order.type_of_service, weight: @order.weight } }
+      post orders_url, params: { order: { assm_state: @order.assm_state, cost_of_service: @order.cost_of_service, currior_number: @order.currior_number, payment_mode: @order.payment_mode, receiver_address: @order.receiver_address, receiver_mobile: @order.receiver_mobile, receiver_name: @order.receiver_name, receiver_pincode: @order.receiver_pincode, sender_address: @order.sender_address, sender_mobile: @order.sender_mobile, sender_name: @order.sender_name, sender_pincode: @order.sender_pincode, type_of_service: @order.type_of_service, weight: @order.weight } }
     end
 
     assert_redirected_to order_url(Order.last)
@@ -34,7 +34,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update order" do
-    patch order_url(@order), params: { order: { assm_state: @order.assm_state, cost_of_service: @order.cost_of_service, curior_number: @order.curior_number, payment_mode: @order.payment_mode, receiver_address: @order.receiver_address, receiver_mobile: @order.receiver_mobile, receiver_name: @order.receiver_name, receiver_pincode: @order.receiver_pincode, sender_address: @order.sender_address, sender_mobile: @order.sender_mobile, sender_name: @order.sender_name, sender_pincode: @order.sender_pincode, type_of_service: @order.type_of_service, weight: @order.weight } }
+    patch order_url(@order), params: { order: { assm_state: @order.assm_state, cost_of_service: @order.cost_of_service, currior_number: @order.currior_number, payment_mode: @order.payment_mode, receiver_address: @order.receiver_address, receiver_mobile: @order.receiver_mobile, receiver_name: @order.receiver_name, receiver_pincode: @order.receiver_pincode, sender_address: @order.sender_address, sender_mobile: @order.sender_mobile, sender_name: @order.sender_name, sender_pincode: @order.sender_pincode, type_of_service: @order.type_of_service, weight: @order.weight } }
     assert_redirected_to order_url(@order)
   end
 

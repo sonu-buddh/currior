@@ -1,84 +1,111 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <div class="alert alert-danger" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="row">
+    <div class="col-6">
+      <h1>Order</h1>
+    </div> 
+    <div class="col-6 ">
+      <%= link_to 'Back', orders_path , class: "btn btn-outline-primary float-right ml-2" %>
+      <%= link_to 'Edit', edit_order_path(@order) , class: "btn btn-outline-primary float-right ml-2" %>
+    </div> 
+</div>
+<div class="page">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <strong>Sender name:</strong>
+      <p class="form-control  w-100">
+        <%= @order.sender_name %>
+      </p>
+    </div>
+    <div class="form-group col-md-6">
+      <strong>Receiver name:</strong>
+      <p class="form-control  w-100">
+        <%= @order.receiver_name %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Sender name:</strong>
-  <%= @order.sender_name %>
-</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <strong>Sender Email:</strong>
+      <p class="form-control  w-100">
+        <%= @order.sender_email %>
+      </p>
+    </div>
+    <div class="form-group col-md-6">
+      <strong>Receiver Email:</strong>
+      <p class="form-control  w-100">
+        <%= @order.receiver_email %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Sender email:</strong>
-  <%= @order.sender_email %>
-</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <strong>Sender Address:</strong>
+      <p class="form-control  w-100"><%= @order.sender_address %></p>
+    </div>
+    <div class="form-group col-md-6">
+      <strong>Receiver Address:</strong>
+      <p class="form-control  w-100"><%= @order.receiver_address %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Sender address:</strong>
-  <%= @order.sender_address %>
-</p>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <strong>Sender Mobile:</strong>
+      <p class="form-control  w-100">
+        <%= @order.sender_mobile %>
+      </p>
+    </div>
+    <div class="form-group col-md-2">
+      <strong>Sender Pincode:</strong>
+      <p class="form-control  w-100">
+        <%= @order.sender_pincode %>
+      </p>
+    </div>
+    <div class="form-group col-md-4">
+      <strong>Receiver Mobile:</strong>
+      <p class="form-control  w-100">
+        <%= @order.receiver_mobile %>
+      </p>
+    </div>
+    <div class="form-group col-md-2">
+      <strong>Receiver Pincode:</strong>
+      <p class="form-control  w-100">
+        <%= @order.receiver_pincode %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Sender mobile:</strong>
-  <%= @order.sender_mobile %>
-</p>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <strong>Weight:</strong>
+      <p class="form-control  w-100">
+        <%= @order.weight %>
+      </p>
+    </div>
+    <div class="form-group col-md-2">
+      <strong>Type Of Service:</strong>
+      <p class="form-control  w-100">
+        <%= @order.type_of_service %>
+      </p>
+    </div>
+    <div class="form-group col-md-4">
+      <strong>Cost Of Service:</strong>
+      <p class="form-control  w-100">
+        <%= @order.cost_of_service %>
+      </p>
+    </div>
+    <div class="form-group col-md-2">
+      <strong>Payment Mode:</strong>
+      <p class="form-control  w-100">
+        <%= @order.payment_mode %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Sender pincode:</strong>
-  <%= @order.sender_pincode %>
-</p>
-
-<p>
-  <strong>Receiver name:</strong>
-  <%= @order.receiver_name %>
-</p>
-
-<p>
-  <strong>Receiver name:</strong>
-  <%= @order.receiver_email %>
-</p>
-
-<p>
-  <strong>Receiver address:</strong>
-  <%= @order.receiver_address %>
-</p>
-
-<p>
-  <strong>Receiver mobile:</strong>
-  <%= @order.receiver_mobile %>
-</p>
-
-<p>
-  <strong>Receiver pincode:</strong>
-  <%= @order.receiver_pincode %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @order.weight %>
-</p>
-
-<p>
-  <strong>Type of service:</strong>
-  <%= @order.type_of_service %>
-</p>
-
-<p>
-  <strong>Cost of service:</strong>
-  <%= @order.cost_of_service %>
-</p>
-
-<p>
-  <strong>Payment mode:</strong>
-  <%= @order.payment_mode %>
-</p>
-
-<p>
-  <strong>Assm state:</strong>
-  <%= @order.aasm_state %>
-</p>
-
-<p>
-  <strong>Curior number:</strong>
-  <%= @order.curior_number %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+</div>

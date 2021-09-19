@@ -14,7 +14,7 @@ one:
   cost_of_service: 1.5
   payment_mode: MyString
   assm_state: MyString
-  curior_number: MyString
+  currior_number: MyString
 
 two:
   sender_name: MyString
@@ -30,4 +30,4 @@ two:
   cost_of_service: 1.5
   payment_mode: MyString
   assm_state: MyString
-  curior_number: MyString
+  currior_number: MyString

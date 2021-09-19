@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.where.not(currior_number: "Delivered")
   end
 
   # GET /orders/1 or /orders/1.json
@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     @order.aasm_state = "generated"
     respond_to do |format|
       if @order.save
-        emails = emails.merge(currior_number: @order.curior_number)
+        emails = emails.merge(currior_number: @order.currior_number)
         
         Order.send_order_create_email(emails)
         format.html { redirect_to @order, notice: "Order was successfully created." }
@@ -63,9 +63,8 @@ class OrdersController < ApplicationController
   def search_order
     currior_number = params[:currior_number]
     if currior_number
-      code = currior_number.split('-')[0]
-      str = currior_number.split('-')[1]
-      if code == "CUR" && str.length == 8
+      str = Order.pluck(:currior_number).include?(currior_number)
+      if str
           @order = Order.search(currior_number)
       else
         flash.now[:notice] = "Invalid Track id"
@@ -83,6 +82,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:sender_name, :sender_email, :sender_address, :sender_mobile, :sender_pincode, :receiver_name, :receiver_email, :receiver_address, :receiver_mobile, :receiver_pincode, :weight, :type_of_service, :cost_of_service, :payment_mode, :assm_state, :curior_number)
+      params.require(:order).permit(:sender_name, :sender_email, :sender_address, :sender_mobile, :sender_pincode, :receiver_name, :receiver_email, :receiver_address, :receiver_mobile, :receiver_pincode, :weight, :type_of_service, :cost_of_service, :payment_mode, :assm_state, :currior_number)
     end
 end
